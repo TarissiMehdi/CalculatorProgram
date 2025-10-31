@@ -1,17 +1,41 @@
-function updateClock(){
-    const now = new Date();
-    let hours = now.getHours();
-    const meridium = hours>=12 ? "PM" : "AM";
-    hours = hours %12 || 12;
-    hours = hours.toString().padStart(2,0);
-    const minutes = now.getMinutes().toString().padStart(2,0);
-    const seconds = now.getSeconds().toString().padStart(2,0);
+const display = document.getElementById("display");
+let timer = null;
+let startTime = 0;
+let elapsedTime = 0;
+let isRunning = false;
 
-    const timeString = `${hours}:${minutes}:${seconds} ${meridium}`;
-
-    document.getElementById("clock").textContent= timeString;
+function start() {
+    if(!isRunning){
+        isRunning = true;
+        startTime = Date.now() - elapsedTime;
+        timer = setInterval(update, 10);
+    }
 }
 
-updateClock();
+function stop() {
+    if(isRunning){
+        clearInterval(timer); // cancels a timed repeated action which was being called by setInterval
+        elapsedTime=Date.now()-startTime;
+        isRunning=false;
+    }
+}
 
-setInterval(updateClock,1000);
+function reset() {
+    clearInterval(timer); // cancels a timed repeated action which was being called by setInterval
+    startTime=0;
+    elapsedTime=0;
+    isRunning=false;
+    display.textContent="00:00:00:00";
+}
+
+function update(){
+    const currentTime = Date.now();
+    elapsedTime = currentTime - startTime;
+
+    let hours = String(Math.floor(elapsedTime/(1000*60*60))).padStart(2,"0");
+    let minutes = String(Math.floor(elapsedTime/(1000*60)%60)).padStart(2,"0");
+    let seconds = String(Math.floor(elapsedTime/1000%60)).padStart(2,"0");
+    let milliseconds = String(Math.floor(elapsedTime%1000/10)).padStart(2,"0");
+
+    display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+} 

@@ -1,75 +1,77 @@
 body{
-    margin: 0;
-    background-image: url(new-york-city-skyline-central-park-dszc.jpg);
-    background-position: center;
-    /* prevent tiling and make the image fill the viewport */
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* optional: keep background fixed while content scrolls */
-    background-attachment: fixed;
-    /* fallback background color while image loads */
-    background-color: #000;
-}
-
-#clock-container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    background-color: hsl(0, 0%, 90%);
 }
 
-#clock{
-    font-family: monospace;
-    font-size: 6.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    backdrop-filter: blur(5px);
-    background-color: hsla(0, 0%, 100%, 0.1);
-    width: 100%;
+#myH1{
+    color: hsl(0, 0%, 25%);
+    font-family: Verdana;
+    font-size: 4rem;
 }
-
- /* #container{
-    
-    background-color: hsl(0,0%,100%);
+ #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
     text-align: center;
-    max-width: 550px;
-    margin: auto;
-    border: solid;
-    border-radius: 10px;
-    border-color:aquamarine;
-    padding: 25px;
-    box-shadow: 5px 15px 15px aquamarine ;
+    border: 5px solid;
+    border-radius: 50px;
+    padding: 30px;
+    box-shadow: 5px 15px 15px aquamarine;
 } 
 
-h1{
-    color: hsl(223, 100%, 64%);
-}
-
-
-
-label{
-    
+#display{
+    font-family: monospace;
+    font-size: 5rem;
     font-weight: bold;
+    color: hsl(0, 0%, 30%);
+    text-shadow: 2px 2px 5px hsla(0, 0%, 0ù, 0.75);
+    margin-bottom: 25px;
+}
+
+#controls button{
     font-size: 1.5rem;
-} */
-
-button{
-    background-color: hsl(160, 100%, 55%);
-    margin-top: 15px;
-    border-radius: 5px;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 5px;
+    min-width: 125px;
+    border-radius: 10px;
+    border: 2px solid;
     cursor: pointer;
-    border: none;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.75);
+    transition: background-color 0.5s ease-in-out;
 }
 
-button:hover{
-    background-color:hsl(160, 100%, 65%);
+#startBtn{
+    background-color: hsl(115, 100%, 40%);
+    color: hsl(0, 0%, 100%);
 }
 
-button:active{
-   background-color:hsl(160, 100%, 75%);
+#startBtn:hover{
+    background-color: hsl(115, 100%, 30%);
 }
+
+#stopBtn{
+    background-color: hsl(10, 90%, 50%);
+    color: hsl(0, 0%, 100%);
+}
+
+#stopBtn:hover{
+    background-color: hsl(10, 90%, 40%);
+}
+
+#resetBtn{
+    background-color: hsl(205, 90%, 60%);
+    color: hsl(0, 0%, 100%);
+}
+
+#resetBtn:hover{
+    background-color: hsl(205, 90%, 50%);
+}
+
+
 
 
 
