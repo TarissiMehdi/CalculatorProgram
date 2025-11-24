@@ -1,77 +1,68 @@
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: hsl(0, 0%, 90%);
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-#myH1{
-    color: hsl(0, 0%, 25%);
-    font-family: Verdana;
-    font-size: 4rem;
+#keys{
+  display: grid;  
+  grid-template-columns: repeat(4,1fr);/* fr should take an even amount of space */
+  gap: 10px; /* gap between each of the rows */
+  padding: 25px;
 }
- #container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    text-align: center;
-    border: 5px solid;
-    border-radius: 50px;
-    padding: 30px;
-    box-shadow: 5px 15px 15px aquamarine;
-} 
+
+#calculator{
+    font-family: Arial, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    /* limit width to viewport but never exceed 500px */
+    width: min(95vw, 500px);
+    box-sizing: border-box;
+    padding: 12px;
+    overflow: hidden;
+}
 
 #display{
-    font-family: monospace;
+    width: 100%;
+    padding: 20px;
     font-size: 5rem;
-    font-weight: bold;
-    color: hsl(0, 0%, 30%);
-    text-shadow: 2px 2px 5px hsla(0, 0%, 0ù, 0.75);
-    margin-bottom: 25px;
+    text-align: left;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
 }
 
-#controls button{
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    font-weight: bold;
-    margin: 5px;
-    min-width: 125px;
-    border-radius: 10px;
-    border: 2px solid;
-    cursor: pointer;
-    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.75);
-    transition: background-color 0.5s ease-in-out;
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
 }
 
-#startBtn{
-    background-color: hsl(115, 100%, 40%);
-    color: hsl(0, 0%, 100%);
+button:hover{
+    background-color: hsl(0, 0%, 40%);
 }
 
-#startBtn:hover{
-    background-color: hsl(115, 100%, 30%);
+button:active{
+    background-color: hsl(0, 0%, 50%);
+} /* continue at 8:04 */
+
+
+.operator-btn{
+    background-color: hsl(35, 100%, 55%);
 }
 
-#stopBtn{
-    background-color: hsl(10, 90%, 50%);
-    color: hsl(0, 0%, 100%);
+.operator-btn:hover{
+    background-color: hsl(35, 100%, 65%);
 }
-
-#stopBtn:hover{
-    background-color: hsl(10, 90%, 40%);
+.operator-btn:active{
+    background-color: hsl(35, 100%, 75%);
 }
-
-#resetBtn{
-    background-color: hsl(205, 90%, 60%);
-    color: hsl(0, 0%, 100%);
-}
-
-#resetBtn:hover{
-    background-color: hsl(205, 90%, 50%);
-}
-
-
-
-
-
